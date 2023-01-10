@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>arrow functions</title>
+</head>
+<body>
+<script>
+    const days = ['Saturday', 'Friday', 'Thursday'];
+
+    const daysMessage = days.map(function (day) {
+        return `Today is ${day}`;
+    });
+    console.log(daysMessage);
+
+    /**
+     * arrow functions.
+     * arrow functions are anonymous functions, has no name.
+     */
+    const daysMessage1 = days.map((day) => {
+        return `Today is ${day}`;
+    });
+    console.log(daysMessage1);
+
+    // single argument need no parentheses
+    const daysMessage2 = days.map(day => {
+        return `Today is ${day}`;
+    });
+    console.log(daysMessage2);
+
+    // implicit return
+    const daysMessage3 = days.map(day => `Today is ${day}`);
+    console.log(daysMessage3);
+
+    // with argument
+    const daysMessage4 = days.map((sayDay) => `Today is ${sayDay.concat=' Yes '} `);
+    const daysMessage5 = days.map((sayDay) => `Today is ${sayDay.slice(2)}. `);
+    console.log(daysMessage4);
+    console.log(daysMessage5);
+
+      // no argument
+      const daysMessage6 = days.map(() => `Today is undifind`);
+      console.log(daysMessage6)
+
+    //Arrow function example 
+
+    const exam = 'Final';
+    const students = ['Mamun Ujjal', 'Nurul Islam', 'Manurul Nadim'];
+
+    const pass = students.map((student, i) => ({
+        name: student,
+        exam, // if the key & value is redundant, we can only use the name once.
+        place: i + 1
+    }));
+    console.log(pass[1]);
+    console.table(pass);
+
+    const marks = [30, 69, 98, 90, 99, 26, 45];
+    const passed = marks.filter(mark => mark >= 40);
+    console.log(passed);
+
+
+    // Default function argument
+    
+     function calculateFare(distance, minutes, discount = 5) {
+        return distance * 10 + minutes * 1 + discount;
+    }
+
+    const totalFare = calculateFare(20, 60);
+    console.log(`Total fare: ${totalFare}`);
+
+</script>
+</body>
+</html>
