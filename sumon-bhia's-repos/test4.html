@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>template strings if</title>
+</head>
+<body>
+<script>
+    const song = {
+        name: "On My Way",
+        artist: " Alan Walker, Farruko, and Sabrina Carpente",
+        genres: "Dance/Electronic, Hip-Hop/Rap"
+    };
+
+    const markup = `
+        <div class="song">
+            <h2>
+                ${song.name}
+            </h2>
+            <p class="artist">
+                ${song.artist}
+                ${song.genres ? `(Featuring ${song.genres})` : ''}
+            </p>
+        </div>
+    `;
+
+    document.body.innerHTML = markup;
+</script>
+</body>
+</html>
